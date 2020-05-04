@@ -27,7 +27,7 @@ btn.addEventListener('click', function(e){
     let a = Number(document.querySelector('.number_1').value);
     let b = Number(document.querySelector('.number_2').value);
     let c = Number(document.querySelector('.number_3').value);
-    if(a|| a==0 && b || b==0 && c || c==0){
+    if(a || a==0 && b || b==0 && c || c==0){
         let MinNumber = Math.min(a, b, c)
         let answer_3 = document.querySelector('.answer_3');
         answer_3.innerHTML = MinNumber;
@@ -54,11 +54,11 @@ btn_2.addEventListener('click', function(e){
         if(balanse_1==balanse_2){
             let answer_4 = document.querySelector('.answer_4');
             answer_4.innerHTML = 'Одинаково близки';
-            }else{
-               let result_4 = (balanse_1>balanse_2)?n:m;
-               let answer_4 = document.querySelector('.answer_4');
-               answer_4.innerHTML = result_4;
-           }
+        }else{
+            let result_4 = (balanse_1>balanse_2)?n:m;
+            let answer_4 = document.querySelector('.answer_4');
+            answer_4.innerHTML = result_4;
+        }
         
      }else{
         let answer_4 = document.querySelector('.answer_4');

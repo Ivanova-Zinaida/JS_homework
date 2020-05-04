@@ -9,7 +9,7 @@ btnMounth.addEventListener('click', function(e){
     console.log();
     let result = null;
     switch(true){
-        case inputNumberMounth<=2||inputNumberMounth==12:
+        case (inputNumberMounth<=2||inputNumberMounth==12)&&inputNumberMounth>0:
                 result= 'Сейчас зима';
                 break;
         case inputNumberMounth>=3&&inputNumberMounth<=5:
@@ -148,13 +148,16 @@ btnClean.addEventListener('click', function(e){
     let inputPlate = document.querySelector('.input__plate').value;
     let inputDetergent = document.querySelector('.input__detergent').value;
     let resultPlate = null;
-    for(let i=inputPlate; i>=0; i--){
+    for(let i=inputPlate-1; i>=0; i--){
         if(inputDetergent==0){
             break;
+        } else if((inputDetergent-0.5)<0){
+            break;
         }
-        inputDetergent-=0.5;
+        inputDetergent=inputDetergent-0.5;
         resultPlate = i
     }
+    inputDetergent= inputDetergent.toFixed(1);
     numberPlate.innerHTML = resultPlate;
     numberDetergent.innerHTML = inputDetergent;
 });
