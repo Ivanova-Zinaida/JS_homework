@@ -77,18 +77,24 @@ btnNumber.addEventListener('click', function(e){
     }
 })
 
-let sun = 0;
 
-for(let i = 001001; i <= 999999; i++){   
+let sun = 0;
+for(let i = 1000; i < 1000000; i++){ 
     if(isLuckyTicketber(i)){
-        sun=sun+1;
-    }   
+        sun+=1     
+    }  
 }
 
 luckyTicket.innerHTML = sun;
 
 function isLuckyTicketber(number) {
 	let str = String(number);
+	if (str.length == 5) {
+		str = '0' + str;
+	}
+	if (str.length == 4) {
+		str = '00' + str;
+	}
 	
 	let sum1 = Number(str[0]) + Number(str[1]) + Number(str[2]);
 	let sum2 = Number(str[3]) + Number(str[4]) + Number(str[5]);
