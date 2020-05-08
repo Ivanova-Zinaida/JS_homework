@@ -79,7 +79,7 @@ btnNumber.addEventListener('click', function(e){
 
 let sun = 0;
 
-for(let i = 001001; i < 999999; i++){   
+for(let i = 001001; i <= 999999; i++){   
     if(isLuckyTicketber(i)){
         sun=sun+1;
     }   
