@@ -65,6 +65,14 @@ input, select{
 }
 .label-plate, .label-detergent,.btn-clean{
     display: block;
-    margin-bottom: 15px;
-    
+    margin-bottom: 15px;  
+}
+table{
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+}
+td{
+    border: 1px solid black;
+    text-align: center;
 }
