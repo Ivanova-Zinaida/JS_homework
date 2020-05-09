@@ -17,7 +17,7 @@ let answer_2 = document.querySelector('.answer_2');
 
 answer_2.innerHTML = resulteCircle;
 
-// Задача  Из трех данных чисел выбрать наименьшее.
+// Задача 3 Из трех данных чисел выбрать наименьшее.
 
 let btn = document.querySelector('.btn');
 
@@ -27,14 +27,9 @@ btn.addEventListener('click', function(e){
     let a = Number(document.querySelector('.number_1').value);
     let b = Number(document.querySelector('.number_2').value);
     let c = Number(document.querySelector('.number_3').value);
-    if(a || a==0 && b || b==0 && c || c==0){
-        let MinNumber = Math.min(a, b, c)
-        let answer_3 = document.querySelector('.answer_3');
-        answer_3.innerHTML = MinNumber;
-    } else{
-        let answer_3 = document.querySelector('.answer_3');
-        answer_3.innerHTML ="Введите число";
-    }  
+           let answer_3 = document.querySelector('.answer_3');
+           let MinNumber = Math.min(a, b, c);
+           answer_3.innerHTML = MinNumber 
 });
 
 // Задача:Вывести в консоль ближайшее к 10 из двух чисел, записанных в переменные m и n. Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.
