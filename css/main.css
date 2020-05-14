@@ -62,10 +62,41 @@ body{
 }
 input, select{
     margin: 0 10px;
+    
 }
 .label-plate, .label-detergent,.btn-clean{
     display: block;
     margin-bottom: 15px;  
+}
+.label {
+    margin-right: 20px; 
+    display: inline-block;
+    
+}
+.form{
+    padding-top: 40px;
+    position:relative;
+}
+.success{
+	display: inline-block;
+    position: absolute;
+    top:0;
+    left: 10px;
+    padding: 5px;
+    background-color:green;
+    display: none;
+}
+.error {
+	display: inline-block;
+    position: absolute;
+    top:0;
+    left: 10px;
+    padding: 5px;
+    background-color:red;
+    display: none;
+}
+.active-error{
+    display: inline-block;
 }
 table{
     width: 250px;
