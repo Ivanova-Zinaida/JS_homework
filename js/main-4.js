@@ -70,3 +70,57 @@ function showMessege(tag, messege){
     tag.innerHTML = messege;
     tag.classList.add('active-error'); 
 }
+
+// Дана строка-словарь, например: "Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье". Пользователь вводит слово из словаря с одной перепутанной буквой, например: "Срида". Написать программу, которая позволяет с использованием регулярного выражения найти в строке-словаре введённое пользователем слово (не смотря на одну ошибку в слове) и вывести исправленное слово пользователю, например: "Среда".
+
+let dictionary = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье', 'кот', 'кит','тот'];
+let btnSerch = document.querySelector('.btn-serch');
+
+
+
+btnSerch.addEventListener('click', function(e){
+    e.preventDefault();
+    let input = document.querySelector('.input__text').value;
+    let resultSpan = document.querySelector('.result__text');
+    input = input.toLowerCase();
+    checkWold(dictionary, input, resultSpan);
+})
+
+function checkWold(dictionary, word,span){
+    let array = [];
+    let n = 0; 
+    let word1='';
+    let word2 = '';
+    for(let i = 0; i<dictionary.length; i++){
+        n = 0; 
+        
+        let word1 = dictionary[i].toLowerCase();
+        
+        if(word.length == word1.length){ 
+            word2 = ''
+            for(let j = 0; j<word1.length; j++){
+    
+                if(word[j]!=word1[j]){
+                    word2 = word2 + word1[j];
+                    n = n + 1
+                }else if(word[j]==word1[j]){
+                    word2 = word2 + word[j];
+                }
+            }
+            if(n==1 ||n==0){
+                array.unshift(word2);   
+            }else if(n==2){
+                array.push(word2);
+            }
+        }      
+    }
+    if(array.length==0){
+        span.innerHTML = 'совпадений не найдено'
+    }else{
+        let str = '';
+        for(let i = 0; i < array.length; i++){
+            str = str + array[i]+', ';  
+          }  
+        span.innerHTML = `Возможно вы искали ${str}`
+      }  
+ }
