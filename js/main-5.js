@@ -1,9 +1,9 @@
 // 1 Задача: Написать функцию сравнения двух массивов. Функция принимает на вход два массива, сравнивает их и возвращает true, если массивы равны и false, если не равны. 
 let array_1 = ['Дом','Сом', 'Лен', 'Дым',12];
-let array_2 = ['Дом','Сом', 'Лен', 'Дым',13,20];
+let array_2 = ['Дом','Сом', 'Лен', 'Дым',13];
 
 function checkArray(array_1, array_2){
-    
+    let result = false;
     if(array_1.length==array_2.length){
         let n = 0;
         for(let i = 0; i < array_1.length; i++){
@@ -14,12 +14,16 @@ function checkArray(array_1, array_2){
                 n = n;
             }
         }
-    (n==array_1.length)?console.log(true):console.log(false);
+    (n==array_1.length)?result = true: result = false;
+    return result;
     }else{
-         console.log(false)
+         resulte=false;
+         
     }
+    return result;
 }
-checkArray(array_1, array_2);
+console.log(checkArray(array_1, array_2))
+;
 
 //  Напишите функцию range, принимающую три аргумента, два обязательных: начало и конец диапазона, третий аргумент - необязательный (если он не задан, шаг равен единице) – шаг для построения массива. Функция возвращает массив, который содержит все числа из него, включая начальное и конечное. Например, вызов функции range(1, 10, 2) должен будет вернуть [1, 3, 5, 7, 9].
 
