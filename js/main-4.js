@@ -92,35 +92,36 @@ function checkWold(dictionary, word,span){
     let word1='';
     let word2 = '';
     for(let i = 0; i<dictionary.length; i++){
-        n = 0; 
-        
         let word1 = dictionary[i].toLowerCase();
-        
-        if(word.length == word1.length){ 
-            word2 = ''
-            for(let j = 0; j<word1.length; j++){
-    
-                if(word[j]!=word1[j]){
-                    word2 = word2 + word1[j];
-                    n = n + 1
-                }else if(word[j]==word1[j]){
-                    word2 = word2 + word[j];
+        n=word1.length
+        if(word.length >= word1.length-1 && word.length <= word1.length+1){
+            for(let j = 0; j<word.length; j++){
+                 let reg = new RegExp(`(?=.+?)${word[j]}`,"g")
+                 console.log(word1)
+                 if(reg.test(word1)){
+                    console.log(word1)
+                     n = n - 1;
                 }
             }
-            if(n==1 ||n==0){
-                array.unshift(word2);   
+            if(n==1 || n==0){
+                word2=word1;
+                array.unshift(word1);
             }else if(n==2){
-                array.push(word2);
+                word2=word1;
+                array.push(word2);             
             }
-        }      
     }
+}
     if(array.length==0){
         span.innerHTML = 'совпадений не найдено'
     }else{
+        console.log(array);
         let str = '';
         for(let i = 0; i < array.length; i++){
-            str = str + array[i]+', ';  
+                str = str + array[i]+', ';
           }  
         span.innerHTML = `Возможно вы искали ${str}`
       }  
  }
+
+
