@@ -9,65 +9,61 @@
   <header class="header">
       <div class="container">
           <ul class="menu">
-              <li class="menu__list"><a href="#" class="menu__link">ДЗ № 1</a></li>
-              <li class="menu__list"><a href="two.html" class="menu__link">ДЗ № 2</a></li>
-              <li class="menu__list"><a href="three.html" class="menu__link">ДЗ № 3</a></li>
-              <li class="menu__list"><a href="four.html" class="menu__link">ДЗ № 4</a></li>
+              <li class="menu__list"><a href="index.html" class="menu__link">ДЗ № 4</a></li>
               <li class="menu__list"><a href="five.html" class="menu__link">ДЗ № 5</a></li>
+              <li class="menu__list"><a href="six.html" class="menu__link">ДЗ № 6</a></li>
               <li class="menu__list"><a href="addTask.html" class="menu__link">доп задание</a></li>
           </ul>
       </div>
   </header>
    <section class="section">
        <div class="container">
-           <h1 class="title">Первая домашняя работа</h1>
+           <h1 class="title">Четвертая домашняя работа</h1>
            <div class="block">
               <h4 class="block__subtitle">1 Задача</h4>
                <p class="section__text">
-                   1 Задача: На садовом участке площадью 10 соток, разбили грядки 15 на 25 метров. Сколько м2 осталось незанято?
+                   1 Задача: Дана строка, изображающая целое число. Вывести сумму цифр этого числа.
                </p>
-               <p class="section__text text__answer">Ответ: <span class="answer_1"></span>м <sup>2</sup></p>  
+               <p class="section__text text__answer">Ответ выводится в консоль</p>  
            </div>
            <div class="block">
               <h4 class="block__subtitle">2 Задача</h4>
                <p class="section__text">
-                   Найдите площадь овального кольца, полученного из овала площадью 15 дм2 вырезанием овала площадью 600 см2.
+                   2 Задача: Дана строка и символ. Удвоить каждое вхождение заданного символа в строку.
                </p>
-               <p class="section__text text__answer">Ответ: <span class="answer_2"></span>дм <sup>2</sup></p>  
+               <p class="section__text text__answer">Ответ выводится в консоль</p>  
            </div>
            <div class="block">
-               <h4 class="block__subtitle">3 Задача</h4>
+              <h4 class="block__subtitle">3 Задача</h4>
                <p class="section__text">
-                   3 Задача: Из трех данных чисел выбрать наименьшее.
+                   3 Задача: Проверить что введенный пароль удовлетворяет следующим условиям сложности: 
+                   -длинна от 9 символов;
+                   - содержит обязательно английские буквы верхнего и нижнего регистра;
+                   - содержит более двух цифр;
+                   - содержит обязательно один из неалфавитных символов (например, !, $, #, %).
                </p>
-               <input type="number" class="number_1">
-               <input type="number" class="number_2">
-               <input type="number" class="number_3">
-               <input type="submit" class="btn" value="Результат">
-               <p class="section__text text__answer">Ответ: <span class="answer_3"></span></p>  
+               <form class= 'form'>
+                  <span class="error"></span>
+                  <span class="success"></span>
+                   <label class="label"><input type="password" class='input__password'>Введите Пароль</label>
+                   <button class="btn-password btn">Войти</button>  
+              </form>
            </div>
-            <div class="block">
-              <h4 class="block__subtitle">4 Задача</h4>
+            <div>
+               <h4 class="block__subtitle">4 Задача</h4>
                <p class="section__text">
-                   Вывести в консоль ближайшее к 10 из двух чисел, записанных в переменные m и n. Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.
+                   Дана строка-словарь, например: "Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье". Пользователь вводит слово из словаря с одной перепутанной буквой, например: "Срида". Написать программу, которая позволяет с использованием регулярного выражения найти в строке-словаре введённое пользователем слово (не смотря на одну ошибку в слове) и вывести исправленное слово пользователю, например: "Среда".
                </p>
-               <input type="number" class="number-1">
-               <input type="number" class="number-2">
-               <input type="submit" class="btn-2 btn" value="Результат">
-               <p class="section__text text__answer">Ответ: <span class="answer_4"></span></p>  
-           </div>
-            <div class="block">
-              <h4 class="block__subtitle">5 Задача</h4>
-               <p class="section__text">
-                   Трёхмерное пространство: Есть три вершины a, b и с. У каждой вершина заданы координатами x, y, z как 
-                   целые числа. Нужно определить - является ли треугольник с заданными координатами прямоугольным.
-               </p>
+               <form class= 'form'>
+                   <label class="label"><input type="text" class='input__text'>Введите слово</label>
+                   <button class="btn-serch btn">найти</button>  
+                   <span class="result__text"></span>
+              </form>
                
-               <p class="section__text text__answer">Ответ: <span class="answer_5"></span></p>  
            </div>
 
        </div>
    </section>
-    <script src="js/main.js"></script>
+    <script src="js/main-4.js"></script>
 </body>
 </html>
