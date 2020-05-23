@@ -1,23 +1,20 @@
 /* Создать функцию которая выводит время в html и обновляет значения каждую секунду. Время выводить в формате чч:мм:cc, при этом часы, минуты и секунды отобразить разными цветами.*/
-
-function showeTime(){
     let hours = document.querySelector('.hours');
-    hours.style.color = 'white';
     let minutes = document.querySelector('.minutes');
-    minutes.style.color = 'lightgreen';
     let seconds = document.querySelector('.seconds');
-    seconds.style.color = 'red';
+
+    function findTime(){
     let date = new Date();
     let hour = date.getHours();
     let min = date.getMinutes();
     let sec = date.getSeconds();
-    if(hour<=9){
+    if(hour<10){
         hours.innerHTML ='0' + hour + ' : ';
        }
-    if(min<=9){
+    if(min<10){
         minutes.innerHTML ='0' + min + ' : ';
        }
-    if(sec<=9){
+    if(sec<10){
        seconds.innerHTML ='0' + sec;  
     }else{
         hours.innerHTML = hour + ' : ';
@@ -26,8 +23,9 @@ function showeTime(){
     }
  
 }
+findTime()
+setInterval(findTime,1000);
 
-setInterval(showeTime, 1000);
 
 /*Дан массив с объектами, где каждый объект описывает товар: фото, артикул, описание и т.п. Сформировать функцию, которой передаётся массив товаров, и которая создаст и внесёт все необходимые html элементы, стили, и содержание для отображения всей информации о товарах.*/
 
@@ -154,30 +152,32 @@ renderProducts(products);
 
 
 let count = 0;
+
 function changeColorDown(){
-    let sliderItems = document.querySelectorAll('.wrap__color .color');
-    sliderItems[count].classList.remove('color__acrive');
-    count++
-    if(count>sliderItems.length-1){
-        count=0;
-    }
-    sliderItems[count].classList.add('color__acrive');             
+    
+    let sliderItems = document.querySelectorAll('.wrap__color .color'); 
+    let colors = ['r', 'ry','g','gy' ];
+        if(count>colors.length-1){
+            count=0;
+        }
+        for(let i = 0; i < sliderItems.length; i++){
+            sliderItems[i].classList.remove('color__acrive')
+        }
+        if('r'==colors[count]){
+            sliderItems[count].classList.add('color__acrive');   
+        }
+        if('ry'==colors[count]){
+            sliderItems[count].classList.add('color__acrive');
+            sliderItems[count-1].classList.add('color__acrive');
+        }if('g'==colors[count]){
+            sliderItems[count].classList.add('color__acrive');
+        }if('gy'==colors[count]){
+            sliderItems[count-2].classList.add('color__acrive');
+            sliderItems[count-1].classList.add('color__acrive');
+        }
+        count++            
 }
-setInterval(changeColorDown, 2000);  
-
-let count_1 = 0;
-function changeColorUp(){
-    let sliderItems = document.querySelectorAll('.wrap__color-two .color');
-    sliderItems[count_1].classList.remove('color__acrive');
-    count_1--
-    if(count_1<0){
-        count_1=sliderItems.length-1;
-    }
-    sliderItems[count_1].classList.add('color__acrive'); 
-}
-
-setInterval(changeColorUp, 2000);
-
+ setInterval(changeColorDown, 2000)
 
 /*Создать функцию которая выводит в html количество дней, часов и минут до нового года и обновляет значения каждую минуту. Датой наступления нового года считается 1 января. Функция выводит в html строку вида: "14 дней 21 час 46 минут". Нужно реализовать корректные окончания слов, например: 1 день, 2 дня, 5 дней. Функция должна корректно работать при запуске в любом году, т. е. 
 грядущий год должен вычисляться программно.*/

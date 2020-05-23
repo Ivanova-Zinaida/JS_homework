@@ -12,18 +12,18 @@ let a = {
     count: 0
 };
 
-function foo(a,count, number){
+function foo(a,value, number){
     let arr = []  
-    for(let i = 0; i<number; i++){
+    for(let i = 0; i < number; i++){
         let b = {};
         b = Object.assign(b, a);
-        let count = i;
-        b.count = count;
+        b[value] = i;
         arr.push(b);
     }
-    return arr
+    return arr;
  }
 console.log(foo(a,'count', 10));
+
 
 /*Сделайте функцию, каждый вызов который будет генерировать одно случайное число от 1 до 100, но так, чтобы оно не повторялось, пока не будут перебраны все числа из этого промежутка. Решите задачу через замыкания - в замыкании должен хранится массив чисел, которые уже были сгенерированы функцией.*/
 
@@ -45,7 +45,7 @@ function createNewNumber(numbers){
      }
    
 let createRandomNumver = createNewNumber(100);
-let arr = createRandomNumver(100);
+let arr = createRandomNumver();
 
 function showResult(arr){
     while(arr.length<100){

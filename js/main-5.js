@@ -29,14 +29,13 @@ console.log(checkArray(array_1, array_2))
 
 function makeArray(start, end, step=1){
     let array = [];
-    array.push[start];
     for(let i = start; i<=end; i=i+step){
         array.push(i);
     }
-    console.log(array);
+    return array;
 }
 
-makeArray(1, 10,3);
+console.log(makeArray(1, 10,3));
 
 //  Построить объект студент со свойствами: Имя, Фамилия, Возраст, Интересы (в виде массива), Место обучения. Написать отдельную функцию, которой передается объект студент, а она выводит его содержимое.
 
