@@ -15,6 +15,9 @@ body{
     text-align: center;
     font-style: italic;
 }
+section {
+	margin-bottom: 30px;
+}
 .hours{
    color: white;
 }

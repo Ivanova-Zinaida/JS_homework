@@ -71,9 +71,9 @@ function showMessege(tag, messege){
     tag.classList.add('active-error'); 
 }
 
-// Дана строка-словарь, например: "Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье". Пользователь вводит слово из словаря с одной перепутанной буквой, например: "Срида". Написать программу, которая позволяет с использованием регулярного выражения найти в строке-словаре введённое пользователем слово (не смотря на одну ошибку в слове) и вывести исправленное слово пользователю, например: "Среда".
+// Дана строка-словарь, например: "Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье". Пользователь вводит слово из словаря с одной перепутанной буквой, например: "Срида". Написать программу, которая позволяет с использованием регулярного выражения найти в строке-словаре введённое пользователем слово (не смотря на одну ошибку в слове) и вывести исправленное слово пользователю, например: "Среда". reg.test(word1)
 
-let dictionary = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье', 'кот', 'кит','тот'];
+let dictionary = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье', 'кот', 'кит','тот','адрес'];
 let btnSerch = document.querySelector('.btn-serch');
 
 
@@ -92,14 +92,13 @@ function checkWold(dictionary, word,span){
     let word1='';
     let word2 = '';
     for(let i = 0; i<dictionary.length; i++){
-        let word1 = dictionary[i].toLowerCase();
+        let word1 = dictionary[i].toLowerCase(); 
         n=word1.length
         if(word.length >= word1.length-1 && word.length <= word1.length+1){
             for(let j = 0; j<word.length; j++){
-                 let reg = new RegExp(`(?=.+?)${word[j]}`,"g")
-                 console.log(word1)
-                 if(reg.test(word1)){
-                    console.log(word1)
+                 let reg = new RegExp(`(?=.*)${word[j]}`,"g");
+                 let sim = word1[j];
+                 if(reg.test(sim)){
                      n = n - 1;
                 }
             }
@@ -112,7 +111,7 @@ function checkWold(dictionary, word,span){
             }
     }
 }
-    if(array.length==0){
+    if(array.length == 0){
         span.innerHTML = 'совпадений не найдено'
     }else{
         console.log(array);
