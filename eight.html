@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework js</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="header">
+      <div class="container">
+          <ul class="menu">
+              <li class="menu__list"><a href="index.html" class="menu__link">ДЗ № 4</a></li>
+              <li class="menu__list"><a href="five.html" class="menu__link">ДЗ № 5</a></li>
+              <li class="menu__list"><a href="six.html" class="menu__link">ДЗ № 6</a></li>
+              <li class="menu__list"><a href="seven.html" class="menu__link">ДЗ № 7</a></li>
+              <li class="menu__list"><a href="#" class="menu__link">ДЗ № 8</a></li>
+              <li class="menu__list"><a href="addTask.html" class="menu__link">доп задание</a></li>
+          </ul>
+      </div>
+  </header>
+   <section class="section">
+       <div class="container">
+           <h1 class="title">Восьмая домашняя работа</h1>
+           <div class="block">
+              <h4 class="block__subtitle">1 Задача</h4>
+               <p class="section__text">
+                   1 Задача: Даны несколько div элементов на html.По первому нажатию на каждый div он перекрашивается зеленым цветом, 
+                   при повторном нажатии перекрашивается обратно и так далее каждый клик происходит чередование цвета.
+               </p>
+               <div class="wrap__color">
+                   <div class="color__elem"></div>
+                   <div class="color__elem"></div>
+                   <div class="color__elem"></div>
+                   <div class="color__elem"></div>
+                   <div class="color__elem"></div>
+                   <div class="color__elem"></div>
+               </div> 
+           </div>
+           <div class="block">
+              <h4 class="block__subtitle">2 Задача</h4>
+               <p class="section__text">
+                   2 Задача: Реализовать счётчик нажатий на кнопку: Дана кнопка внутри неё записана цифра. При клике на кнопку – её значение должно увеличиваться на единицу. 
+               </p>
+               <button class="btn__count">0</button>
+           </div>
+           <div class="block">
+              <h4 class="block__subtitle">3 Задача</h4>
+               <p class="section__text">
+                   3 Задача: Реализовать возможность добавления комментариев. Комментарий вводится в textarea.Комментарий добавляется по нажатию на кнопку Комментировать.При добавлении комменария отображаются: аватар автора (пока у всех комментарие одинаковый), имя автора (пока у всех комментарие одинаковое), дата добавления комментария (текущая дата), текст комментария (тот, что был введен в textarea).
+               </p>
+               <form class="wrap__comment">
+                   <textarea class="form__textarea"></textarea>
+                   <button class="btn__blue form__btn">send</button>
+               </form>
+            <div class="commetns">
+                    <h4 class="block-title comments-title"><span class="number__comment"></span> comments</h4>
+                    <ul class="comments__list">
+
+                    </ul>
+                </div>    
+           </div>
+          <div class="block">
+              <h4 class="block__subtitle">4 Задача</h4>
+               <p class="section__text">
+                   4 Задача:  Дан массив с объектами, где каждый объект описывает книгу: артикул, автор, название, описание.Сформировать функцию, которой передаётся массив книг, и которая создаст и внесёт все необходимые html элементы, стили, и содержание для отображения всей информации о книгах в виду таблицы.
+               </p>
+               <table class="books_block"></table>
+                
+           </div>
+          <div class="block">
+              <h4 class="block__subtitle">5 Задача</h4>
+               <p class="section__text">
+                   5 Задача: Реализовать одну страничку HTML о знаменитом человеке с использованием панели с вкладками (табы). Например, в качестве знаменитого человека возьмём Пушкина А.С., из википедии возьмём наполнение странички, в качестве вкладок можно указать: биография, творчество и т.п. Переключение между вкладками страницы и изменение содержимого реализовать с использованием JS.
+               </p>
+         <div class="flex-container tabs-container">
+                <section class="features__big features__tabs_big">
+                    <div class="tabs">
+                        <a class='tabs__link' href="#" data-tab='tab-1'>tab title</a>
+                        <a class='tabs__link' href="#" data-tab='tab-2'>tab title</a>
+                        <a class='tabs__link' href="#" data-tab='tab-3'>tab title</a>
+                        <a class='tabs__link' href="#" data-tab='tab-4'>tab title</a>
+ 
+                        <section class="content-tab active__tabs" data-tab='tab-1'>
+                           <div class="content-flex">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ab atque officia earum suscipit, quasi, consequatur aut debitis tempore mollitia nemo excepturi cum corrupti molestias, possimus amet error voluptatum voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis minus neque commodi voluptatum, repellat at! Ducimus minima ipsa alias sint, facere tenetur reprehenderit architecto debitis dolorum perspiciatis odit, libero quasLorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ab atque officia earum suscipit, quasi, consequatur aut debitis tempore mollitia nemo excepturi cum corrupti molestias, possimus amet error voluptatum voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis minus neque commodi voluptatum, repellat at! Ducimus minima ipsa alias sint, facere tenetur reprehenderit architecto debitis dolorum perspiciatis odit, libero quas
+                                
+                                </p>
+                                <img src="image/features/features-1.jpg" alt="" class="tab-img">
+                           </div>
+                        </section>  
+                        <section class="content-tab" data-tab='tab-2'>
+                           <div class="content-flex">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ab atque officia earum suscipit, quasi, consequatur aut debitis tempore mollitia nemo excepturi cum corrupti molestias, possimus amet error voluptatum voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis minus neque commodi voluptatum, repellat at! Ducimus minima ipsa alias sint, facere tenetur reprehenderit architecto debitis dolorum perspiciatis odit, libero quas</p>
+                                <img src="image/features/features-2.jpg" alt="" class="tab-img">
+                           </div>
+                        </section> 
+                        <section class="content-tab" data-tab = 'tab-3'>
+                           <div class="content-flex">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ab atque officia earum suscipit, quasi, consequatur aut debitis tempore mollitia nemo excepturi cum corrupti molestias, possimus amet error voluptatum voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis minus neque commodi voluptatum, repellat at! Ducimus minima ipsa alias sint, facere tenetur reprehenderit architecto debitis dolorum perspiciatis odit, libero quas
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ab atque officia earum suscipit, quasi, consequatur aut debitis tempore mollitia nemo excepturi cum corrupti molestias, possimus amet error voluptatum voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis minus neque commodi voluptatum, repellat at! Ducimus minima ipsa alias sint, facere tenetur reprehenderit architecto debitis dolorum perspiciatis odit, libero quas
+                                </p>
+                                <img src="image/features/features-5.jpg" alt="" class="tab-img">
+                           </div>
+                        </section> 
+                        <section class="content-tab" data-tab = 'tab-4'>
+                           <div class="content-flex">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ab atque officia earum suscipit, quasi, consequatur aut debitis tempore mollitia nemo excepturi cum corrupti molestias, possimus amet error voluptatum voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis minus neque commodi voluptatum, repellat at! Ducimus minima ipsa alias sint, facere tenetur reprehenderit architecto debitis dolorum perspiciatis odit, libero quas</p>
+                                <img src="image/features/features-6.jpg" alt="" class="tab-img">
+                           </div>
+                        </section>    
+                    </div>
+                </section>
+                
+           </div>
+           
+       </div>
+   </section>
+    <script src="js/main-8.js"></script>
+</body>
+</html>
