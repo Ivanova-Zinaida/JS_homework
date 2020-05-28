@@ -7,7 +7,7 @@ wrapColor.addEventListener('click', function(e){
     if(elemTarget.classList.contains('color__elem')){
         elemTarget.classList.toggle('color__elem-active');
     }
-}, true)
+})
 
 //2 Задача: Реализовать счётчик нажатий на кнопку: Дана кнопка внутри неё записана цифра. При клике на кнопку – её значение должно увеличиваться на единицу. 
 
@@ -139,7 +139,7 @@ tabContainer.addEventListener('click', function(e){
     e.preventDefault()
     let elemTarget = e.target;
     if(elemTarget.classList.contains('tabs__link')){
-        let dataTab = elemTarget.getAttribute('data-tab');
+        let dataTab = elemTarget.getAttribute('data-index');
         for(let i = 0; i < tabText.length; i++){
             tabText[i].classList.remove('active__tabs');
             if(tabText[i].getAttribute('data-tab')==dataTab){
@@ -148,4 +148,4 @@ tabContainer.addEventListener('click', function(e){
         }
         
     }
-},true)
+})
