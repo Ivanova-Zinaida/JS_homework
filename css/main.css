@@ -18,6 +18,9 @@ body{
 section {
 	margin-bottom: 30px;
 }
+th{
+    border: 1px solid black;
+}
 .comments__list{
     list-style-type: none;
     margin: 0;
@@ -53,6 +56,26 @@ section {
     width: 100px;
     height: 120px;
     margin-left: 20px;
+}
+.attemps{
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}
+.td__bg{
+    min-width: 100px;
+    height: 50px;
+    background-color: chocolate;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0px;
+}
+.luze{
+    background-color: red;
+}
+.win{
+    background-color: green;
+    font-size: 18px;
 }
 .tabs>section>p{
 	margin: 0 0 5px;
