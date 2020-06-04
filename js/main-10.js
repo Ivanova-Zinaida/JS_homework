@@ -142,28 +142,27 @@ console.log(getNamedUser("Zina").toString());
 Создайте все необходимые шаблоны объектов (классы) и приведите 
 пример их использования.*/
 
-function Human(sex, name, lastName, middleName, age){
-    this.sex = sex;
-    this.name = name;
-    this.lastName = lastName;
-    this.middleName = middleName;
-    this.age = age;
-    this.fullName  = `${this.lastName} ${this.name} ${this.middleName}`;
-}
-
+ // создаем обект курсы
 function Cours( cours, university, start, end){
     this.cours = cours;
     this.srart = start;
     this.end = end;
-    let teathers = [];
+    let teachers = [];
     let students = [];
+    let rate = [];
+
+// Возвращает имя курса  
     this.getNameCours = function(){
         return this.cours;
     }
+  
+// Добавляет студента 
     this.addStudent = function(student){
         students.push(student);
         return `студент успешно записался на курс ${cours}`;   
     }
+  
+// Добавляет удаляет
     this.deleteStudent = function(student){
         for(let i = 0; i < students.length; i++){
             if(student.fullName == students[i].fullName){
@@ -172,6 +171,25 @@ function Cours( cours, university, start, end){
             }
         }
     };
+
+// Добавляет учителя
+    this.addTeasher = function(teacher){
+        teachers.push(teacher);
+        return `Лектор ${teacher.fullName} ведет ${cours}`;
+    };
+  
+// удаляет учителя
+    this.deleteTeasher = function(teacher){
+        for(let i = 0; i < teachers.length; i++){
+            if(teachers.fullName == teachers[i].fullName){
+                teachers.splice(i, 1);
+                return `Лектор ${teacher.fullName} больше не ведет  ${cours}`;
+            }
+        }
+        
+    };
+ 
+// показывает список студентов
     this.showListStudent = function(){
         let list = '';
         for(let i = 0 ; i < students.length; i++){
@@ -183,53 +201,89 @@ function Cours( cours, university, start, end){
             
         }
         return `На курсе ${cours} записалось ${students.length}. Список студентов: ${list}`
-    }
-    
-    this.addTeasher = function(teacher){
-        teathers.push(teather);
-        return `Лектор ${teather.fullName} ведет ${cours}`;
-    }
-    
-    this.deleteTeasher = function(teacher){
-        for(let i = 0; i < teathers.length; i++){
-            if(teathers.fullName == teathers[i].fullName){
-                teathers.splice(i, 1);
-                return `Лектор ${teather.fullName} больше не ведет  ${cours}`;
-            }
-        }
-        
     };
+
+// показывает имя учителя
+    this.showNameTeacher = function(){
+        let teacher = '';
+        for(let i = 0 ; i < teachers.length; i++){
+            if(i ==teachers.length-1){
+                teacher += teachers[i].fullName + '.';
+            } else {
+                teacher += teachers[i].fullName + ', ';
+            }           
+        }
+        return `Данный курс ведет ${teacher}`
+    }
+ 
+// возвращает длительность курса
     this.showDurationCours = function(){
         return `Курс ${this.cours} ночинается ${this.start} и заканчивается ${this.end}`
-    }
+    };
+
 }
 
+// создает шаблон человека.
+function Human(sex, name, lastName, middleName, age){
+    this.sex = sex;
+    this.name = name;
+    this.lastName = lastName;
+    this.middleName = middleName;
+    this.age = age;
+    this.fullName  = `${this.lastName} ${this.name} ${this.middleName}`;
+}
+
+// создает шаблон учителя
 function Teacher(sex, name, lastName, middleName, age, cours){
     Human.call(this, sex, name, lastName, middleName, age);
-    this.cours = cours.cours;
+    this.cours = [cours.cours];
+    
+    this.goOutCours = function(cours){
+        cours.deleteTeasher(this);
+        return `Учитель ${this.fullName} больше не ведет ${this.cours}`;
+    };
+    this.addCours = function(cours){
+        cours.addTeasher(this);
+        return `Лектор ${this.fullName} ведет курс ${this.cours}`;
+    };
+    
+    this.lookListStudent = function (cours){
+        return cours.showListStudent();
+    };
+
  }
 
-function Student_1(sex, name, lastName, middleName, age){
+// создает шаблон студента
+
+function Student_1(sex, name, lastName, middleName, age,cours){
     Human.call(this, sex, name, lastName, middleName, age);
+    
     this.cours = cours.cours;
-}
+    
+    this.goOutCours = function(cours){
+        cours.deleteStudent(this);
+        return `Cтудент ${this.fullName} покинул курс ${this.cours}`;
+    };
+    this.addCours = function(cours){
+        cours.addStudent(this);
+        return `Cтудент ${this.fullName} записался на курс ${this.cours}`;
+    };
+    this.lookNameTeacher = function(cours){   
+        return cours.showNameTeacher();
+    }
+};
 
-let cours = new Cours('node', 'itmo','27 may 2020', '28 iuly 2020' );
-let teather = new Teacher('муж', 'Михаил', 'Смирнов', 'Васильевич', '30',cours)
-let student_1= new Student_1('жен', 'Зинаида', 'Иванова', 'Михайлона', '31', cours)
-let student_2= new Student_1('муж', 'Василий', 'Березкин', 'Владимирович', '29', cours)
-let student_3= new Student_1('жен', 'Люблвь', 'Иванова', 'Михайловна', '32', cours)
+let nodeCours = new Cours('Node.js', 'itmo','27 may 2020', '28 iuly 2020' );
+let teacher = new Teacher('муж', 'Михаил', 'Смирнов', 'Васильевич', '30', nodeCours);
+let student_1= new Student_1('жен', 'Зинаида', 'Иванова', 'Михайлона', '31', nodeCours);
+let student_2= new Student_1('муж', 'Василий', 'Березкин', 'Владимирович', '29', nodeCours);
+let student_3= new Student_1('жен', 'Люблвь', 'Иванова', 'Михайловна', '32', nodeCours);
 
-console.log(cours)
-
-console.log(teather)
-
-console.log(student_1)
-console.log(cours.addStudent(student_1));
-console.log(cours.addStudent(student_2));
-console.log(cours.addStudent(student_3));
-console.log(cours.addTeasher(teather));
-console.log(cours.deleteStudent(student_2))
-console.log(cours.showListStudent());
-
-
+console.log(nodeCours.addStudent(student_2));
+console.log(nodeCours.addStudent(student_3));
+console.log(nodeCours.addTeasher(teacher));
+console.log(student_1.addCours(nodeCours));
+console.log(nodeCours.showListStudent());
+console.log(nodeCours.showNameTeacher());
+console.log(student_1.lookNameTeacher(nodeCours));
+console.log(teacher.lookListStudent(nodeCours));
